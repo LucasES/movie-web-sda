@@ -6,10 +6,12 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider) {
+  function config($locationProvider, $logProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
 
+    // Disable # on url
+    $locationProvider.html5Mode(true);
   }
 
 })();
