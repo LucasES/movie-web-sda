@@ -1,6 +1,7 @@
 <div class="background-image"></div>
 <div class="container">
-    <div class="login-block">
+    
+    <div class="login-block">        
         <form name="form" ng-submit="login.login(login.username, login.password)" role="form">
             <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
                 <label for="username">Login</label>
@@ -13,9 +14,58 @@
                 <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Senha é obrigatória!</span>
             </div>
             <div class="form-actions">
-                <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-primary">Login</button>
-                <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                <button ng-if="!login.dataLoading" type="submit" ng-disabled="form.$invalid || login.dataLoading" class="btn btn-primary">Login</button>
             </div>
         </form>
     </div>
+</div>
+
+<div class="l-wrapper" ng-if="login.dataLoading">
+    <svg viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      
+      <symbol id="s--circle">
+        <circle r="10" cx="20" cy="20"></circle>
+      </symbol>
+      
+      <g class="g-circles g-circles--v1">
+        <g class="g--circle">
+          <use xlink:href="#s--circle" class="u--circle"/>
+        </g>  
+        <g class="g--circle">
+          <use xlink:href="#s--circle" class="u--circle"/>
+        </g>
+        <g class="g--circle">
+          <use xlink:href="#s--circle" class="u--circle"/>
+        </g>
+        <g class="g--circle">
+          <use xlink:href="#s--circle" class="u--circle"/>
+        </g>
+        <g class="g--circle">
+          <use xlink:href="#s--circle" class="u--circle"/>
+        </g>
+        <g class="g--circle">
+          <use xlink:href="#s--circle" class="u--circle"/>
+        </g>
+        <g class="g--circle">
+          <use xlink:href="#s--circle" class="u--circle"/>
+        </g>
+        <g class="g--circle">
+          <use xlink:href="#s--circle" class="u--circle"/>
+        </g>
+        <g class="g--circle">
+          <use xlink:href="#s--circle" class="u--circle"/>
+        </g>
+        <g class="g--circle">
+          <use xlink:href="#s--circle" class="u--circle"/>
+        </g>
+        <g class="g--circle">
+          <use xlink:href="#s--circle" class="u--circle"/>
+        </g>
+        <g class="g--circle">
+          <use xlink:href="#s--circle" class="u--circle"/>
+        </g>
+      </g>
+  </svg>
+  
+ 
 </div>
