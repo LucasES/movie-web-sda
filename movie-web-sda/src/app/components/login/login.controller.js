@@ -9,6 +9,10 @@
   function LoginController(loginService) {
     var vm = this;    
     
-    vm.login = loginService.login();
+    vm.login = login;
+
+    function login () {
+      return loginService.login(vm.username, vm.password);
+    }
   }
 })();

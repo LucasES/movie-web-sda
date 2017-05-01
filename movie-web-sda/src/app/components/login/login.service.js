@@ -7,15 +7,14 @@
 
   /** @ngInject */
   function loginService($window, $http, $httpParamSerializer, $cookies, OAuthProvider) {
-    var _data = {
-        grant_type: OAuthProvider.grantTypePassword, 
-        username: OAuthProvider.username, 
-        password: OAuthProvider.password
-    };
-
     var _encoded = btoa(OAuthProvider.client + ":" + OAuthProvider.secret);
 
-    var _login =  function login() {   
+    var _login =  function login(login, password) {   
+        var _data = {
+            grant_type: OAuthProvider.grantTypePassword, 
+            username: login, 
+            password: password
+        };
         var req = {
             method: 'POST',
             url: OAuthProvider.url,
