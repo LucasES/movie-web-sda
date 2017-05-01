@@ -66,11 +66,19 @@ main .helper span {
   cursor: pointer;
   text-align: center;
 }
+.menu ul li:last-child {
+  position: absolute;
+  bottom: 0;  
+  width: 100%;
+}
 .menu ul li.icon-movie {
   background-image: url("http://www.entypo.com/images/video-camera.svg");
 }
 .menu ul li.icon-register {
   background-image: url("http://www.entypo.com/images/plus.svg");
+}
+.menu ul li.icon-logout {
+  background-image: url("http://www.entypo.com/images/log-out.svg");
 }
 .menu ul li:hover {
   background-color: rgba(0, 0, 0, 0.1);
