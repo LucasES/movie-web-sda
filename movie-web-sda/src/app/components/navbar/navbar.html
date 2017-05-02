@@ -1,12 +1,12 @@
-<nav class="menu" tabindex="0">
+<nav class="menu" tabindex="0" ng-controller="NavbarController as nav">
     <div class="smartphone-menu-trigger"></div>
     <header class="avatar">
        <img src="http://icons.iconarchive.com/icons/designbolts/free-multimedia/1024/Film-icon.png" />
       <h2>SDA</h2>
     </header>
     <ul>
-        <li tabindex="0" class="icon-movie"><span>Filmes</span></li>
-        <li tabindex="0" class="icon-register"><span>Cadastrar</span></li>        
-        <li tabindex="0" class="icon-logout"><span>Sair</span></li> 
+        <li tabindex="0" class="icon-movie" ng-click="nav.goHome()"><span>Filmes</span></li>
+        <li tabindex="0" class="icon-register" ng-click="nav.goNewBook()"><span>Cadastrar</span></li>        
+        <li tabindex="0" class="icon-logout" ng-click="nav.logout()"><span>Sair</span></li> 
     </ul>
 </nav>
