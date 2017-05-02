@@ -29,9 +29,9 @@
       })
       .state('cadastrar', {
         url: '/home/cadastrar',
-        templateUrl: 'app/components/new-book/new-book.html',
-        controller: 'NewBookController',
-        controllerAs: 'newBook'
+        templateUrl: 'app/components/new-movie/new-movie.html',
+        controller: 'NewMovieController',
+        controllerAs: 'newMovie'
       });
 
     $urlRouterProvider.otherwise('/login');

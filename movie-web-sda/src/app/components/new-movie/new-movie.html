@@ -1,0 +1,57 @@
+<div id="home">
+    <div>   
+        <acme-navbar></acme-navbar>        
+    </div>
+
+</div>
+<div class="container-fluid" ng-init="newMovie.getAllGenre()">
+    <h2 class="text-center">Cadastro de filmes</h2>
+    <form name="newMovie.formMovie" ng-submit="newMovie.save(newMovie.movie)">
+        <div class="form-group row" ng-class="{ 'has-error': newMovie.formMovie.title.$dirty && newMovie.formMovie.title.$error.required }">
+            <div class="col-xs-6">
+                <label for="title">Título *</label>
+                <input type="text" name="title" id="title" class="form-control" ng-model="newMovie.movie.title" required />
+                <span ng-show="newMovie.formMovie.title.$dirty && newMovie.formMovie.title.$error.required" class="help-block">O título é obrigatório!</span>
+            </div>
+        </div>       
+        <div class="form-group row" ng-class="{ 'has-error': newMovie.formMovie.genre.$dirty && newMovie.formMovie.genre.$error.required }">
+            <div class="col-xs-4">
+                <label for="exampleSelect1">Gênero *</label>
+                <select class="form-control" ng-model="newMovie.movie.genre.id" ng-options="item.id as item.name for item in newMovie.allGenre">
+                    
+                </select>
+            </div>
+        </div>
+         <div class="form-group row" ng-class="{ 'has-error': newMovie.formMovie.release.$dirty && newMovie.formMovie.release.$error.required }">
+             <div class="col-xs-4">
+                <label for="release">Data de lançamento *</label>
+                <input type="date" name="release" id="release" class="form-control" ng-model="newMovie.movie.releaseDate" required />
+                <span ng-show="newMovie.formMovie.release.$dirty && newMovie.formMovie.release.$error.required" class="help-block">A data de lançamento é obrigatória!</span>
+             </div>
+        </div>
+        <div class="form-group row" ng-class="{ 'has-error': newMovie.formMovie.image.$dirty && newMovie.formMovie.image.$error.required }">
+            <div class="col-xs-4">
+                <label for="image">Link imagem com a capa do filme *</label>
+                <input type="text" name="image" id="image" class="form-control" ng-model="newMovie.movie.urlImage" required />
+                <span ng-show="newMovie.formMovie.image.$dirty && newMovie.formMovie.image.$error.required" class="help-block">A capa da imagem é obrigatória!</span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-xs-4">
+                <label for="classification" class="col-2 col-form-label">Classificação</label>
+                <input class="form-control" id="classification" type="number" ng-model="newMovie.movie.rating" id="classification">
+           </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-xs-4">
+                <label for="classificationImdb" class="col-2 col-form-label">Classificação IMDB</label>
+                <input class="form-control" id="classificationImdb" type="number" step="0.1" min="0" max="10.0" ng-model="newMovie.movie.imdbRating" id="classificationImdb">
+           </div>
+        </div>
+        <p>Os campos marcados com * são obrigatórios!</p>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="newMovie.formMovie.$invalid" class="btn btn-lg btn-primary">Cadastrar</button>
+        </div>
+    </form>
+
+</div>
