@@ -26,6 +26,12 @@
         templateUrl: 'app/components/home/home.html',
         controller: 'HomeController',
         controllerAs: 'home'
+      })
+      .state('cadastrar', {
+        url: '/home/cadastrar',
+        templateUrl: 'app/components/new-book/new-book.html',
+        controller: 'NewBookController',
+        controllerAs: 'newBook'
       });
 
     $urlRouterProvider.otherwise('/login');
