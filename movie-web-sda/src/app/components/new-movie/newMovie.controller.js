@@ -30,6 +30,7 @@
                 $http.defaults.headers.common.Authorization = 
                 'Bearer ' + data.data.access_token;
                 $cookies.put("access_token", data.data.access_token);
+                $cookies.put("refresh_token", data.data.refresh_token);
                 getAllGenre();
             })
             .catch(function() {
@@ -52,6 +53,7 @@
                 $http.defaults.headers.common.Authorization = 
                 'Bearer ' + data.data.access_token;
                 $cookies.put("access_token", data.data.access_token);
+                $cookies.put("refresh_token", data.data.refresh_token);
                 getAllGenre();
             })
             .catch(function() {
@@ -62,3 +64,4 @@
 
   }
 })();
+
