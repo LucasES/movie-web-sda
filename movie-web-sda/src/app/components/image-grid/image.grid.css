@@ -19,6 +19,7 @@
   flex: auto; 
   width: 200px; 
   margin: .5vw; 
+  max-width: 200px;
 }
 #images-grid div img { 
   width: 100%; 
