@@ -20,6 +20,8 @@
   width: 200px; 
   margin: .5vw; 
   max-width: 200px;
+  height: 300px;
+  max-height: 300px;
 }
 #images-grid div img { 
   width: 100%; 
