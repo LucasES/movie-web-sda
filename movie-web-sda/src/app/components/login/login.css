@@ -1,5 +1,5 @@
 body {
-    background: url('http://i.imgur.com/Eor57Ae.jpg') no-repeat fixed center center !important;
+    background: url('../../../assets/images/login/login.jpg') no-repeat fixed center center !important;
     background-size: cover;
     font-family: Montserrat;    
 }
@@ -70,22 +70,22 @@ body {
 }
 
 .login-block input#username {
-    background: #34495e url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+    background: #34495e url('../../../assets/images/login/username.png') 20px top no-repeat;
     background-size: 16px 80px;
 }
 
 .login-block input#username:focus {
-    background: #34495e url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
+    background: #34495e url('../../../assets/images/login/username.png') 20px bottom no-repeat;
     background-size: 16px 80px;
 }
 
 .login-block input#password {
-    background: #34495e url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
+    background: #34495e url('../../../assets/images/login/password.png') 20px top no-repeat;
     background-size: 16px 80px;
 }
 
 .login-block input#password:focus {
-    background: #34495e url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
+    background: #34495e url('../../../assets/images/login/password.png') 20px bottom no-repeat;
     background-size: 16px 80px;
 }
 
