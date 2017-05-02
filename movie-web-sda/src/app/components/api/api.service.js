@@ -67,7 +67,7 @@
         var deferred = $q.defer();
         var movieSaved = undefined;
 
-        $http.post(API.baseUrl + API.getMovies + API.accessToken + currentToken, JSON.stringify(data))
+        $http.post(API.baseUrl + API.getMovies + API.accessToken + currentToken, angular.toJson(data))
           .then(function(result) {
             movieSaved = result.data;
             deferred.resolve(movieSaved);

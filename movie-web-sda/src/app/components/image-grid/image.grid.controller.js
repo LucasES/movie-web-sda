@@ -6,7 +6,7 @@
     .controller('ImageGridController', ImageGridController);
 
   /** @ngInject */
-  function ImageGridController($window, $http, $cookies, apiService, oauthFactory) {    
+  function ImageGridController($state, $window, $http, $cookies, apiService, oauthFactory) {    
     var vm = this;  
     vm.movies = movies;
 
@@ -14,7 +14,7 @@
       apiService.getMovies()
         .then(function(data) {
           vm.allMovies = data;
-        }).catch(function(err) {
+        }).catch(function() {
           oauthFactory.refreshToken()
             .then(function(data){
                 $http.defaults.headers.common.Authorization = 
@@ -27,6 +27,6 @@
             });
         });
     }
-    
+
   }
 })();

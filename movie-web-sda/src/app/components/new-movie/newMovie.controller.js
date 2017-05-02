@@ -6,15 +6,14 @@
     .controller('NewMovieController', NewMovieController);
 
   /** @ngInject */
-  function NewMovieController($timeout, $window, $http, $cookies, apiService, oauthFactory) {
+  function NewMovieController($document, $timeout, $window, $http, $cookies, apiService, oauthFactory) {
     var vm = this;
 
     var _currentPage = "/home/cadastrar";
 
     oauthFactory.checkLoggedUser(_currentPage);
 
-    var element = document.querySelector('body');
-    var angElement = angular.element(element);
+    var angElement = angular.element($document).find('body');
     angElement.addClass('body-class-white');
 
     vm.getAllGenre = getAllGenre;
@@ -25,7 +24,7 @@
       apiService.getAllGenre()
         .then(function(data) {
           vm.allGenre = data;
-        }).catch(function(err) {
+        }).catch(function() {
           oauthFactory.refreshToken()
             .then(function(data){
                 $http.defaults.headers.common.Authorization = 
@@ -41,13 +40,13 @@
 
     function save(movie) {
       apiService.saveMovie(movie)
-        .then(function(data) {
+        .then(function() {
           $timeout(function(){ 
             vm.movie = {};
             vm.formMovie.$setPristine();
             vm.formMovie.$setUntouched();
           });
-        }).catch(function(err) {
+        }).catch(function() {
           oauthFactory.refreshToken()
             .then(function(data){
                 $http.defaults.headers.common.Authorization = 
