@@ -1,0 +1,25 @@
+<div ng-init="movieDescription.movieById()">   
+    <acme-navbar></acme-navbar>        
+</div>
+
+<header id="images-grid">    
+    <div class="image-center">
+        <img ng-src="{{movieDescription.currentMovie.urlImage}}" alt="movieDescription.currentMovie.title">
+       
+    </div>        
+</header>
+
+<div >
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">{{movieDescription.currentMovie.title}}</div>
+      <div class="panel-body"><strong>Data de lançamento: </strong>{{movieDescription.currentMovie.releaseDate | date:"dd/MM/yyyy"}}</div>
+      <div class="panel-body"><strong>Gênero: </strong>{{movieDescription.currentMovie.genre.name}}</div>
+      <div class="panel-body"><strong>Classificação: </strong>{{movieDescription.currentMovie.rating}}</div>
+      <div class="panel-body"><strong>Classificação IMDBC: </strong>{{movieDescription.currentMovie.imdbRating}}</div>
+      <div class="panel-footer" style="text-align: center;"> <button ng-click="movieDescription.deleteMovie(movieDescription.currentMovie.id)" type="button" class="btn btn-danger">Deletar filme</button></div>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+</div>

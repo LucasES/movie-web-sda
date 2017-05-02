@@ -80,5 +80,23 @@
 
         return $q.when(movieSaved);
     }
+
+    this.deleteMovieById = function(id) {
+        var deferred = $q.defer();
+        var movieDeleted = undefined;
+
+        $http.delete(API.baseUrl + API.getMovies + id + "/" + API.accessToken + currentToken)
+          .then(function(result) {
+            movieDeleted = result.data;
+            deferred.resolve(movieDeleted);
+          }, function(error) {
+            movieDeleted = error;
+            deferred.reject(error);
+          });
+
+        movieDeleted = deferred.promise;
+
+        return $q.when(movieDeleted);
+    }
   }
 })();

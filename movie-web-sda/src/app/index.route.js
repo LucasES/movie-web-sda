@@ -27,11 +27,11 @@
         controller: 'HomeController',
         controllerAs: 'home'
       })
-      .state('cadastrar', {
-        url: '/home/cadastrar',
-        templateUrl: 'app/components/new-movie/new-movie.html',
-        controller: 'NewMovieController',
-        controllerAs: 'newMovie'
+      .state('detail', {
+        url: '/home/{movieId}',
+        templateUrl: 'app/components/movie-description/movie-description.html',
+        controller: 'MovieDescriptionController',
+        controllerAs: 'movieDescription'
       });
 
     $urlRouterProvider.otherwise('/login');
