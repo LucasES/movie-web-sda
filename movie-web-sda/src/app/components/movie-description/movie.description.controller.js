@@ -36,7 +36,7 @@
 
     function deleteMovie(id) {
       apiService.deleteMovieById(id)
-        .then(function(data) {
+        .then(function() {
           $window.location.href="#/home";
         }).catch(function() {
           oauthFactory.refreshToken()
